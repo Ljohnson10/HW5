@@ -85,4 +85,14 @@ Partial Class _Default
 
     End Sub
 
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        tbLoanAmt.Text = String.Empty
+        tbAnnualInterest.Text = String.Empty
+        tbLoanTerm.Text = String.Empty
+        lblMonthlyPmt.Text = String.Empty
+        loanGridView.DataSource = Nothing
+        loanGridView.DataBind()
+
+
+    End Sub
 End Class
