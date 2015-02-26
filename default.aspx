@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
     <div>
     
-    Mike's Mortgage Calculator
+    Lucas Johnson's Mortgage Calculator
         
         <br /><br />
      
