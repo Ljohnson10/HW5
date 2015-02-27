@@ -1,0 +1,42 @@
+﻿body {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:#E8D8EB;
+    color:#5A3760;
+}
+header{
+   font-size:35px;
+   font-weight:bold;
+   font-family:Arial, Helvetica, sans-serif;
+   padding:5px;
+   border-color:#E8D8EB;
+   border-bottom-color:white;
+   border-style:solid;
+   border-width:2px;
+}
+.errorMessage{
+    color:red;
+}
+#lblMonthlyPmt{
+    font-weight:bold;
+}
+#Content{
+ 
+}
+.row{
+   background-color:white;
+   color:#5A3760;
+   border-color:#5A3760;
+   border-style:solid;
+   border-width:2px;
+}
+#loanGridView{
+   border-color:#5A3760;
+   border-style:solid;
+   border-width:2px;
+}
+.altrow{
+   border-color:#5A3760;
+   border-style:solid;
+   border-width:2px;
+
+}

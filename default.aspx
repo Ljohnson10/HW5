@@ -5,14 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-
+    <link rel="stylesheet" type="text/css" href="Styles.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-    Lucas Johnson&#39;s Loan Calculator
-        
+   
+    <header>
+    Lucas Johnson's Loan Calculator
+    </header>
+      <div id="Content">   
         <br /><br />
      
             
@@ -24,6 +25,7 @@
                      ErrorMessage="** Please enter a loan amount.">
                 </asp:RequiredFieldValidator>
             </span>
+          
         <br /><br />
         Annual Interest %: <asp:TextBox ID="tbAnnualInterest" runat="server" ></asp:TextBox>
         &nbsp;
@@ -32,7 +34,16 @@
                      ControlToValidate="tbAnnualInterest" 
                      ErrorMessage="** Please enter interest rate.">
                 </asp:RequiredFieldValidator>
+
             </span>
+            <span class="errorMessage">
+                <asp:RangeValidator ID="RangeValidator1" runat="server"
+                    ControlToValidate="tbAnnualInterest" 
+                    ErrorMessage="Please enter a valid rate" 
+                    Type="Double" MinimumValue="0">
+               
+                </asp:RangeValidator>
+                </span>
         <br /><br />
 
         Loan Term (Yrs): <asp:TextBox ID="tbLoanTerm" runat="server" ></asp:TextBox>
@@ -43,6 +54,7 @@
                      ErrorMessage="** Please enter a loan term.">
                 </asp:RequiredFieldValidator>
             </span>
+         
         <br /><br />
 
         <asp:Button ID="btnCalcPmt" runat="server" Text="Calculate" />
@@ -62,7 +74,10 @@
         
         <br /><br />
         
-        <asp:GridView ID="loanGridView" runat="server" />
+        <asp:GridView ID="loanGridView" runat="server" >
+            <RowStyle CssClass="row" />
+            <AlternatingRowStyle CssClass="altRow" />
+        </asp:GridView>
         <br /> 
         <%End If%>
     </form>
