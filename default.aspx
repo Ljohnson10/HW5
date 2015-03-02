@@ -25,7 +25,13 @@
                      ErrorMessage="** Please enter a loan amount.">
                 </asp:RequiredFieldValidator>
             </span>
-          
+            <span class="errorMessage"> 
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                    ControlToValidate="tbLoanAmt" 
+                    ErrorMessage="** Please enter a valid loan amount." 
+                    ValidationExpression="(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$">
+                </asp:RegularExpressionValidator>
+            </span>
         <br /><br />
         Annual Interest %: <asp:TextBox ID="tbAnnualInterest" runat="server" ></asp:TextBox>
         &nbsp;
@@ -36,14 +42,13 @@
                 </asp:RequiredFieldValidator>
 
             </span>
-            <span class="errorMessage">
-                <asp:RangeValidator ID="RangeValidator1" runat="server"
+             <span class="errorMessage"> 
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                     ControlToValidate="tbAnnualInterest" 
-                    ErrorMessage="Please enter a valid rate" 
-                    Type="Double" MinimumValue="0">
-               
-                </asp:RangeValidator>
-                </span>
+                    ErrorMessage="** Please enter a valid interest rate." 
+                    ValidationExpression="^(?:[1-9]\d*(?:\.\d+)?|0\.0*[1-9]\d*)$">
+                </asp:RegularExpressionValidator>
+            </span>
         <br /><br />
 
         Loan Term (Yrs): <asp:TextBox ID="tbLoanTerm" runat="server" ></asp:TextBox>
@@ -54,7 +59,13 @@
                      ErrorMessage="** Please enter a loan term.">
                 </asp:RequiredFieldValidator>
             </span>
-         
+           <span class="errorMessage"> 
+                <asp:RegularExpressionValidator ID="regex_term" runat="server" 
+                    ControlToValidate="tbLoanTerm" 
+                    ErrorMessage="** Please enter a valid loan term" 
+                    ValidationExpression="^1*(40|[0-3]?[0-9])$">
+                </asp:RegularExpressionValidator>
+            </span>
         <br /><br />
 
         <asp:Button ID="btnCalcPmt" runat="server" Text="Calculate" />
